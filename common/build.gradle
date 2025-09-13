@@ -9,6 +9,10 @@ configurations {
 }
 
 repositories {
+    maven {
+        name = "LinguaBib"
+        url = "https://maven.blazing-coop.net/releases"
+    }
     mavenLocal()
     maven { url 'https://jitpack.io' }
     maven {
@@ -27,10 +31,6 @@ repositories {
     maven { // Reach Entity Attributes
         url = "https://maven.jamieswhiteshirt.com/libs-release"
         content { includeGroup("com.jamieswhiteshirt") }
-    }
-    maven {
-        name = "LinguaBib"
-        url = "https://maven.blazing-coop.net/releases"
     }
 }
 
