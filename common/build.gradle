@@ -30,7 +30,7 @@ repositories {
     }
     maven {
         name = "LinguaBib"
-        url "https://maven.blazing-coop.net/releases"
+        url = "https://maven.blazing-coop.net/releases"
     }
 }
 
