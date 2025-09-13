@@ -419,6 +419,7 @@ public class ClaimStorage implements IPermissionStorage {
                     String realName = name.replace(".json", "");
                     UUID uuid = realName.equals(ADMIN_CLAIMS) ? null : UUID.fromString(realName);
                     JsonReader reader = ConfigHandler.GSON.newJsonReader(Files.newBufferedReader(file, StandardCharsets.UTF_8));
+                    Flan.LOGGER.info("[Flan-DEBUG] parsing claims file: {}", file.toAbsolutePath());
                     JsonArray arr = ConfigHandler.GSON.fromJson(reader, JsonArray.class);
                     reader.close();
                     if (arr == null)
