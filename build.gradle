@@ -3,4 +3,25 @@ plugins {
     id "dev.architectury.loom" version "1.4-SNAPSHOT" apply false
 }
 
+repositories {
+    maven {
+        name = "Flemmli97"
+        url "https://maven.blazing-coop.net/releases"
+    }
+}
+
+dependencies {    
+    //Fabric==========    
+    modCompileOnly("io.github.flemmli97:flan:${minecraft_version}-${flan_version}-${mod_loader}:api") {
+		transitive = false //Remove this if you want to have all those optional dependencies
+	}
+    modRuntime("io.github.flemmli97:flan:${minecraft_version}-${flan_version}-${mod_loader}") {
+		transitive = false //Remove this if you want to have all those optional dependencies
+	}
+    
+    //Forge==========    
+    compileOnly fg.deobf("io.github.flemmli97:flan:${minecraft_version}-${flan_version}-${mod_loader}:api")
+    runtimeOnly fg.deobf("io.github.flemmli97:flan:${minecraft_version}-${flan_version}-${mod_loader}")
+}
+
 apply from: "https://raw.githubusercontent.com/Flemmli97/GradleScripts/arch-loom-v2/main.gradle"
